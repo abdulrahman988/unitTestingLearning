@@ -11,16 +11,16 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ShoppingDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertShoppingItem(shoppingItem: ShoppingItem)
+    @Query("SELECT * FROM SHOPPING_TABLE")
+    fun getAllShoppingItem():Flow<List<ShoppingItem>>
 
     @Delete
     suspend fun deleteShoppingItem(shoppingItem: ShoppingItem)
 
-    @Query("SELECT * FROM SHOPPING_TABLE")
-    fun getAllShoppingItem():Flow<List<ShoppingItem>>
-
     @Query("SELECT SUM(price * amount) From shopping_table")
     fun getTotalPrice():Flow<Float>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertShoppingItem(shoppingItem: ShoppingItem)
 
 }
