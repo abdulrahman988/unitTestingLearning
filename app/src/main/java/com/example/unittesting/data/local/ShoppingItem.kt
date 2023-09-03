@@ -1,4 +1,4 @@
-package com.example.unittesting.data
+package com.example.unittesting.data.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

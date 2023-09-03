@@ -1,11 +1,11 @@
-package com.example.unittesting.database
+package com.example.unittesting.data.local
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.unittesting.data.ShoppingItem
+import com.example.unittesting.data.local.ShoppingItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
